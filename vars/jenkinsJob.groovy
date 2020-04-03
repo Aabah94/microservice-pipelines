@@ -15,7 +15,8 @@ def call(){
 
 def packageArtifact(){
     stage("Package artifact") {
-        bat "mvn package"
+        def mvnHome = "C:/Users/Aabha.Verma/Downloads/apache-maven-3.6.3-bin/apache-maven-3.6.3"
+        sh "${mvnHome}/bin/mvn.cmd package"
     }
 }
 
