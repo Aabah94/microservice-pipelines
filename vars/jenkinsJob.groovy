@@ -23,6 +23,6 @@ def packageArtifact(){
 def buildAndTest(){
     stage("Backend tests"){
         def mvnHome = "C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\Maven"
-        sh "${mvnHome}/bin/mvn.cmd
+        sh "${mvnHome}/bin/mvn.cmd test"
     }
 }
