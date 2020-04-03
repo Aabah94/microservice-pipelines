@@ -15,13 +15,14 @@ def call(){
 
 def packageArtifact(){
     stage("Package artifact") {
-        def mvnHome = "C:/Users/Aabha.Verma/Downloads/apache-maven-3.6.3-bin/apache-maven-3.6.3"
+        def mvnHome = "C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\Maven"
         sh "${mvnHome}/bin/mvn.cmd package"
     }
 }
 
 def buildAndTest(){
     stage("Backend tests"){
-        bat "mvn test"
+        def mvnHome = "C:\Program Files (x86)\Jenkins\tools\hudson.tasks.Maven_MavenInstallation\Maven"
+        sh "${mvnHome}/bin/mvn.cmd
     }
 }
