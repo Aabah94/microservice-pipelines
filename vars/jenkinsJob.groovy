@@ -15,12 +15,14 @@ def call(){
 
 def packageArtifact(){
     stage("Package artifact") {
-        sh "mvn package"
+        def mvnHome = "E:/Jenkins/tools/hudson.tasks.Maven_MavenInstallation/Maven"
+        bat "${mvnHome}/bin/mvn.cmd package"
     }
 }
 
 def buildAndTest(){
     stage("Backend tests"){
-        sh "mvn test"
+        def mvnHome = "E:/Jenkins/tools/hudson.tasks.Maven_MavenInstallation/Maven"
+        bat "${mvnHome}/bin/mvn.cmd test"
     }
 }
