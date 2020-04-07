@@ -29,6 +29,7 @@ def Test(){
 	
 def sonarScan(){
     stage("Sonar scan"){
-        bat "mvn sonar:sonar"
+       def mvnHome = "E:/Jenkins/tools/hudson.tasks.Maven_MavenInstallation/Maven"
+       bat "${mvnHome}/bin/mvn.cmd sonar:sonar"
     }
 }
