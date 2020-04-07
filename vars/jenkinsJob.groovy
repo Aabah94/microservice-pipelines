@@ -20,7 +20,7 @@ def packageArtifact(){
     }
 }
 
-def Test(){
+def test(){
     stage("Backend tests"){
        def mvnHome = "E:/Jenkins/tools/hudson.tasks.Maven_MavenInstallation/Maven"
        bat "${mvnHome}/bin/mvn.cmd test"
