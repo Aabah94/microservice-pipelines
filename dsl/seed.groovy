@@ -1,4 +1,4 @@
-def TestJob(testName, repoUrl) {
+def createTestJob(testName, repoUrl) {
     pipelineJob(testName) {
         definition {
             cpsScm {
