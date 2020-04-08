@@ -6,17 +6,16 @@ def call(){
 
         // Execute different stages depending on the job
 		
-		packageArtifact()
+		compile()
 		test()
 		sonarScan()
     }
 }
 
-def packageArtifact(){
-    stage("Package artifact") {
+def compile(){
+    stage("Comiple") {
        def mvnHome = "E:/Jenkins/tools/hudson.tasks.Maven_MavenInstallation/Maven"
        bat "${mvnHome}/bin/mvn.cmd compile"
-       bat "${mvnHome}/bin/mvn.cmd package"
     }
 }
 
