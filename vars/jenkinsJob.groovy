@@ -21,7 +21,7 @@ def sonarScan(){
 }
 
 def compile(){
-    stage("Comiple") {
+    stage("Compile") {
        def mvnHome = "E:/Jenkins/tools/hudson.tasks.Maven_MavenInstallation/Maven"
        bat "${mvnHome}/bin/mvn.cmd compile"
     }
