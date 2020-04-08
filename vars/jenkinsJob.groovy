@@ -6,9 +6,17 @@ def call(){
 
         // Execute different stages depending on the job
 		
-		compile()
-		test()
-		sonarScan()
+	    sonarScan()
+	    compile()
+	    test()
+		
+    }
+}
+
+def sonarScan(){
+    stage("Sonar scan"){
+       def mvnHome = "E:/Jenkins/tools/hudson.tasks.Maven_MavenInstallation/Maven"
+       bat "${mvnHome}/bin/mvn.cmd sonar:sonar"
     }
 }
 
@@ -23,12 +31,5 @@ def test(){
     stage("Backend tests"){
        def mvnHome = "E:/Jenkins/tools/hudson.tasks.Maven_MavenInstallation/Maven"
        bat "${mvnHome}/bin/mvn.cmd test"
-    }
-}
-	
-def sonarScan(){
-    stage("Sonar scan"){
-       def mvnHome = "E:/Jenkins/tools/hudson.tasks.Maven_MavenInstallation/Maven"
-       bat "${mvnHome}/bin/mvn.cmd sonar:sonar"
     }
 }
