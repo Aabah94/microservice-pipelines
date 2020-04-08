@@ -6,8 +6,8 @@ def call(){
 
         // Execute different stages depending on the job
 		
-	    sonarScan()
 	    compile()
+	    sonarScan()
 	    test()
 		
     }
